@@ -1,5 +1,5 @@
 server {
-	# Ports to listen on, uncomment one.
+	# Ports to listen on
 	listen 443 ssl http2;
 	listen [::]:443 ssl http2;
 
@@ -51,8 +51,8 @@ server {
 
 # Redirect www to non-www
 server {
-	listen 443;
-	listen [::]:443;
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
 	server_name www.single-site.com;
 
 	return 301 https://single-site.com$request_uri;

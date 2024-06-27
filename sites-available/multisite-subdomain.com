@@ -1,7 +1,8 @@
 server {
 	# Ports to listen on
-	listen 443 ssl http2;
-	listen [::]:443 ssl http2;
+	listen 443 ssl;
+	listen [::]:443 ssl;
+	http2 on;
 
 	# Server name to listen for
 	server_name multisite-subdomain.com *.multisite-subdomain.com;

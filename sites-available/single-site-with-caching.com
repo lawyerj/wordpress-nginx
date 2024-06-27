@@ -5,8 +5,9 @@ fastcgi_cache_path /sites/single-site-with-caching.com/cache levels=1:2 keys_zon
 
 server {
 	# Ports to listen on
-	listen 443 ssl http2;
-	listen [::]:443 ssl http2;
+	listen 443 ssl;
+	listen [::]:443 ssl;
+	http2 on;
 
 	# Server name to listen for
 	server_name single-site-with-caching.com;
@@ -69,8 +70,10 @@ server {
 
 # Redirect www to non-www
 server {
-	listen 443 ssl http2;
-	listen [::]:443 ssl http2;
+	listen 443 ssl;
+	listen [::]:443 ssl;
+	http2 on;
+	
 	server_name www.single-site-with-caching.com;
 
 	return 301 https://single-site-with-caching.com$request_uri;
